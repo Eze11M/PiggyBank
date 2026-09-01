@@ -2,7 +2,7 @@
   "contracts/PiggyBank.sol": {
     "__sources__": {
       "contracts/PiggyBank.sol": {
-        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\ncontract PiggyBank {\r\n    \r\n}",
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\ncontract PiggyBank {\r\n    address public owner = msg.sender;\r\n\r\n    event Deposit(uint256 amount);\r\n    event Withdraw(uint256 amount);\r\n\r\n    receive() external payable {\r\n        emit Deposit(msg.value);\r\n    }\r\n\r\n    function withdraw() external {\r\n        require(msg.sender == owner, \"not owner\");\r\n\r\n        emit Withdraw(address(this).balance);\r\n        \r\n        selfdestruct(payable(msg.sender));\r\n    }\r\n}",
         "file": "contracts/PiggyBank.sol"
       }
     }
