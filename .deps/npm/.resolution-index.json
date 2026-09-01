@@ -1,0 +1,10 @@
+{
+  "contracts/PiggyBank.sol": {
+    "__sources__": {
+      "contracts/PiggyBank.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.19;\r\n\r\ncontract PiggyBank {\r\n    \r\n}",
+        "file": "contracts/PiggyBank.sol"
+      }
+    }
+  }
+}
